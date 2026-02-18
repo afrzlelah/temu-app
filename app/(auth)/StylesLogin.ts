@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     color: "#000",
     fontSize: 16,
+    width: "100%",
   },
   passwordWrapper: {
     flexDirection: "row",
@@ -72,7 +73,7 @@ export const styles = StyleSheet.create({
   forgotPassText: {
     fontSize: 14,
     fontWeight: "bold",
-    color: COLOR.second,
+    color: COLOR.primary,
   },
   buttonCenterer: {
     alignItems: "center",
@@ -86,7 +87,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   signInButtonText: {
-    color: "#f8e1ff",
+    color: "#fff",
     fontSize: 18,
     fontWeight: "800",
   },
@@ -98,18 +99,43 @@ export const styles = StyleSheet.create({
   anotherSignInText: {
     fontSize: 12,
     fontWeight: 500,
-    color: "#767676",
+    color: "#a9a9a9",
+    backgroundColor: "white",
+    paddingHorizontal: 10,
   },
   anotherSignInGroup: {
-    width: "100%",
-    justifyContent: "space-between",
+    width: "76%",
+    height: 1,
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
+    backgroundColor: "gray",
   },
-  garisTextAnotherSignIn: {
-    backgroundColor: "#767676",
-    height: 2,
-    flex: 1,
-    marginHorizontal: 20,
+  iconAnotherSignInGroup: {
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 20,
+  },
+  iconAnotherSignIn: {
+    borderWidth: 1,
+    padding: 7,
+    borderRadius: 50,
+    width: 40,
+    alignItems: "center",
+  },
+  dontHaveAnAccountGroup: {
+    marginBottom: 40,
+    flexDirection: "row",
+    gap: 3,
+  },
+  dontHaveAnAccountText: {
+    fontSize: 12,
+    fontWeight: 900,
+  },
+  dontHaveAnAccountTextLink: {
+    fontSize: 13,
+    color: COLOR.primary,
+    fontWeight: 900,
   },
 });

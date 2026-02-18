@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { styles } from "./StylesAuth";
-import { Link } from "expo-router";
+import { styles } from "./StylesLogin";
+import { Link, router } from "expo-router";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -86,39 +86,27 @@ const LoginScreen = () => {
       {/* Another Sign In */}
       <View style={styles.anotherSignIn}>
         <View style={styles.anotherSignInGroup}>
-          <View style={styles.garisTextAnotherSignIn} />
-          <View>
-            <Text style={styles.anotherSignInText}>Or Sign In With</Text>
-          </View>
-          <View style={styles.garisTextAnotherSignIn} />
+          <Text style={styles.anotherSignInText}>Or Sign In With</Text>
         </View>
 
-        <View style={styles}>
-          <Pressable>
-            <FontAwesome5
-              name={isPasswordVisible ? "eye" : "eye-slash"}
-              size={20}
-              color="black"
-            />
+        <View style={styles.iconAnotherSignInGroup}>
+          <Pressable style={styles.iconAnotherSignIn}>
+            <FontAwesome5 name="google" size={24} color="black" />
           </Pressable>
-          <Pressable>
-            <FontAwesome5
-              name={isPasswordVisible ? "eye" : "eye-slash"}
-              size={20}
-              color="black"
-            />
+          <Pressable style={styles.iconAnotherSignIn}>
+            <FontAwesome5 name="apple" size={24} color="black" />
           </Pressable>
-          <Pressable>
-            <FontAwesome5
-              name={isPasswordVisible ? "eye" : "eye-slash"}
-              size={20}
-              color="black"
-            />
+          <Pressable style={styles.iconAnotherSignIn}>
+            <FontAwesome5 name="facebook" size={24} color="black" />
           </Pressable>
         </View>
-        <View>
-          <Text>Don't Have An Account?</Text>
-          <Pressable onPress={() => console.log("Create Account")}></Pressable>
+        <View style={styles.dontHaveAnAccountGroup}>
+          <Text style={styles.dontHaveAnAccountText}>
+            Don't Have An Account?
+          </Text>
+          <Pressable onPress={() => router.replace("/register")}>
+            <Text style={styles.dontHaveAnAccountTextLink}>Create Account</Text>
+          </Pressable>
         </View>
       </View>
     </ScrollView>
