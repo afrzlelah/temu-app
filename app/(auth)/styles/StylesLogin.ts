@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
     color: COLOR.primary,
   },
   inputField: {
-    backgroundColor: "#dcdcdc",
+    backgroundColor: "#e9e9e9",
     paddingHorizontal: 20,
     height: 55,
     borderRadius: 15,
@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
   passwordWrapper: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#dcdcdc",
+    backgroundColor: "#e9e9e9",
     borderRadius: 15,
     height: 55,
     overflow: "hidden",
@@ -65,6 +65,7 @@ export const styles = StyleSheet.create({
   },
   eyeIcon: {
     paddingHorizontal: 15,
+    backgroundColor: "#e9e9e9",
   },
   forgotPassContainer: {
     flexDirection: "row-reverse",

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { styles } from "./StylesLogin";
+import { styles } from "./styles/StylesLogin";
 import { Link, router } from "expo-router";
 
 import PhoneInput, {
@@ -136,17 +136,18 @@ const RegisterScreen = () => {
               onChangeSelectedCountry={handleChangeCountry}
               phoneInputStyles={{
                 container: {
-                  backgroundColor: "#dcdcdc",
+                  backgroundColor: "#e9e9e9",
                   borderRadius: 15, // Membuat sudut sangat bulat (oval)
                   height: 55, // Menambah tinggi input agar lebih lega
                   justifyContent: "space-between",
                   gap: 5,
+                  borderWidth: 0,
                 },
                 flagContainer: {
                   borderRadius: 15, // Membuat background bendera jadi bulat sempurna
                   alignItems: "center",
                   width: 80,
-                  backgroundColor: "#dcdcdc",
+                  backgroundColor: "#e9e9e9",
                 },
                 flag: {
                   width: 0,
@@ -201,7 +202,7 @@ const RegisterScreen = () => {
               secureTextEntry={!isPasswordVisible}
               value={confirmPassword}
               onChangeText={setConfirmPassword}
-              style={styles.inputFieldPassword}
+              style={styles.inputField}
               placeholder="Enter Your Password"
               placeholderTextColor="gray"
             />
