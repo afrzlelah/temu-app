@@ -4,9 +4,9 @@ import { COLOR } from "@/constant/COLOR";
 import { Image } from "expo-image";
 import { BenderaIndonesia, imageForgortPassword } from "@/assets/temu-images";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
-const forgoPasswordPage = () => {
+const forgotPasswordPage = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
   const inputs = useRef<(TextInput | null)[]>([]);
 
@@ -14,9 +14,7 @@ const forgoPasswordPage = () => {
     const newOtp = [...otp];
     newOtp[index] = text;
     setOtp(newOtp);
-    if (text == "") {
-      inputs.current[index - 1]?.focus();
-    } else {
+    if (text && otp.length - 1) {
       inputs.current[index + 1]?.focus();
     }
   };
@@ -24,12 +22,9 @@ const forgoPasswordPage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topestViewContainer}>
-        <FontAwesome5
-          name="arrow-left"
-          size={24}
-          color={COLOR.primary}
-          style={{ marginLeft: 10, marginTop: 10 }}
-        />
+        <Link href={"/(auth)/login"} style={{ marginLeft: 20, marginTop: 40 }}>
+          <FontAwesome5 name="arrow-left" size={24} color={COLOR.primary} />
+        </Link>
         <View
           style={{
             // backgroundColor: COLOR.backgrounDark,
@@ -37,12 +32,13 @@ const forgoPasswordPage = () => {
             right: 0,
             top: 0,
             width: "70%",
+            height: "100%",
           }}
         >
           <View
             style={{
               backgroundColor: COLOR.primary,
-              height: 40,
+              height: 60,
               width: "100%",
               zIndex: 2,
               borderBottomLeftRadius: 50,
@@ -87,7 +83,7 @@ const forgoPasswordPage = () => {
               }}
               style={styles.otpInput}
               maxLength={1}
-              keyboardType="phone-pad"
+              keyboardType="number-pad"
               value={value}
               onChangeText={(text) => handleChangeOtp(text, index)}
               onKeyPress={({ nativeEvent }) => {
@@ -103,7 +99,10 @@ const forgoPasswordPage = () => {
           ))}
         </View>
         <View style={styles.otpBtnContainer}>
-          <Pressable style={styles.otpBtn}>
+          <Pressable
+            style={styles.otpBtn}
+            onPress={() => router.push("/(auth)/setNewPasswordPage")}
+          >
             <Text style={{ color: "white", fontSize: 20, fontWeight: "900" }}>
               Continue
             </Text>
@@ -132,7 +131,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     padding: 10,
-    height: "auto",
+    height: 100,
   },
   verificationContainer: {
     // backgroundColor: "#000",
@@ -222,4 +221,4 @@ const styles = StyleSheet.create({
     color: COLOR.primary,
   },
 });
-export default forgoPasswordPage;
+export default forgotPasswordPage;

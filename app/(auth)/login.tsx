@@ -70,7 +70,7 @@ const LoginScreen = () => {
 
           {/* Forgot Password */}
           <View style={styles.forgotPassContainer}>
-            <Link href={"/(auth)/forgotPasswordPage"}>
+            <Link href={"/(auth)/forgotPasswordPage"} style={{ padding: 10 }}>
               <Text style={styles.forgotPassText}>Forgot Password?</Text>
             </Link>
           </View>
@@ -98,7 +98,7 @@ const LoginScreen = () => {
             <FontAwesome5 name="apple" size={24} color="black" />
           </Pressable>
           <Pressable style={styles.iconAnotherSignIn}>
-            <FontAwesome5 name="facebook" size={24} color="black" />
+            <FontAwesome5 name="facebook" size={24} color="blue" />
           </Pressable>
         </View>
         <View style={styles.dontHaveAnAccountGroup}>
