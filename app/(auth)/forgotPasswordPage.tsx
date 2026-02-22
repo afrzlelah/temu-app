@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import { COLOR } from "@/Style/COLOR";
+import { COLOR } from "@/constant/COLOR";
 import { Image } from "expo-image";
 import {
   BenderaIndonesia,

@@ -17,7 +17,7 @@ import PhoneInput, {
   ICountry,
   isValidPhoneNumber,
 } from "react-native-international-phone-number";
-import { COLOR } from "@/Style/COLOR";
+import { COLOR } from "@/constant/COLOR";
 
 const RegisterScreen = () => {
   const [firstName, setFirstName] = useState<string>("");
