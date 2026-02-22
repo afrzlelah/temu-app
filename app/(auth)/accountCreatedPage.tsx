@@ -70,8 +70,8 @@ const passwordChagedPage = () => {
             </View>
           </View>
           <View style={styles.verificationContainer}>
-            <Text style={styles.verificationText}>Password Changed</Text>
-            <Text style={styles.enterCodeText}>No Hassle Anymore </Text>
+            <Text style={styles.verificationText}>Account Created!</Text>
+            <Text style={styles.enterCodeText}>Welcome to NEMU</Text>
           </View>
           <View style={styles.imageContainer}>
             <Image
