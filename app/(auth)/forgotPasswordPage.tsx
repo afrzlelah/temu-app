@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TextInput, Pressable } from "react-native";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { COLOR } from "@/constant/COLOR";
 import { Image } from "expo-image";
 import { BenderaIndonesia, imageForgortPassword } from "@/assets/temu-images";
@@ -7,6 +7,20 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { Link } from "expo-router";
 
 const forgoPasswordPage = () => {
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const inputs = useRef<(TextInput | null)[]>([]);
+
+  const handleChangeOtp = (text: string, index: number) => {
+    const newOtp = [...otp];
+    newOtp[index] = text;
+    setOtp(newOtp);
+    if (text == "") {
+      inputs.current[index - 1]?.focus();
+    } else {
+      inputs.current[index + 1]?.focus();
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topestViewContainer}>
@@ -65,13 +79,35 @@ const forgoPasswordPage = () => {
       </View>
       <View style={styles.containerOtp}>
         <View style={styles.otpCol}>
-          <TextInput style={styles.otpInput} maxLength={1} />
-          <TextInput style={styles.otpInput} maxLength={1} />
-          <TextInput style={styles.otpInput} maxLength={1} />
-          <TextInput style={styles.otpInput} maxLength={1} />
+          {otp.map((value, index) => (
+            <TextInput
+              key={index}
+              ref={(ref) => {
+                inputs.current[index] = ref;
+              }}
+              style={styles.otpInput}
+              maxLength={1}
+              keyboardType="phone-pad"
+              value={value}
+              onChangeText={(text) => handleChangeOtp(text, index)}
+              onKeyPress={({ nativeEvent }) => {
+                if (
+                  nativeEvent.key == "Backspace" &&
+                  !otp[index] &&
+                  index > 0
+                ) {
+                  inputs.current[index - 1]?.focus();
+                }
+              }}
+            />
+          ))}
         </View>
         <View style={styles.otpBtnContainer}>
-          <Pressable style={styles.otpBtn}>Continue</Pressable>
+          <Pressable style={styles.otpBtn}>
+            <Text style={{ color: "white", fontSize: 20, fontWeight: "900" }}>
+              Continue
+            </Text>
+          </Pressable>
         </View>
       </View>
       <View style={styles.textBottomestContainer}>
