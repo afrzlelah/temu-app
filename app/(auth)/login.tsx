@@ -69,7 +69,7 @@ const LoginScreen = () => {
 
           {/* Forgot Password */}
           <View style={styles.forgotPassContainer}>
-            <Link href={"/(auth)/forgoPasswordPage"}>
+            <Link href={"/(auth)/forgotPasswordPage"}>
               <Text style={styles.forgotPassText}>Forgot Password?</Text>
             </Link>
           </View>

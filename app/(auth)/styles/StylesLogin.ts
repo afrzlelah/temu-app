@@ -89,8 +89,8 @@ export const styles = StyleSheet.create({
   },
   signInButtonText: {
     color: "#fff",
-    fontSize: 18,
-    fontWeight: "800",
+    fontSize: 22,
+    fontWeight: "900",
   },
   anotherSignIn: {
     height: 250,

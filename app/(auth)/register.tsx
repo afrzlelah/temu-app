@@ -68,17 +68,9 @@ const RegisterScreen = () => {
 
       {/* Form Section */}
       <View style={styles.formContainer}>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-          }}
-        >
+        <View style={styles.inputGroup}>
           <View
             style={{
-              width: "85%",
               flexDirection: "row",
               justifyContent: "space-between",
               gap: 10,
