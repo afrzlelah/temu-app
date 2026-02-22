@@ -105,7 +105,10 @@ const LoginScreen = () => {
           <Text style={styles.dontHaveAnAccountText}>
             Don't Have An Account?
           </Text>
-          <Pressable onPress={() => router.replace("/register")}>
+          <Pressable
+            onPress={() => router.replace("/register")}
+            style={{ paddingVertical: 10 }}
+          >
             <Text style={styles.dontHaveAnAccountTextLink}>Create Account</Text>
           </Pressable>
         </View>

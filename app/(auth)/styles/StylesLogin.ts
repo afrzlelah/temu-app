@@ -133,6 +133,7 @@ export const styles = StyleSheet.create({
   dontHaveAnAccountText: {
     fontSize: 12,
     fontWeight: 900,
+    paddingVertical: 10,
   },
   dontHaveAnAccountTextLink: {
     fontSize: 13,

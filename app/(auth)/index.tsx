@@ -9,7 +9,7 @@ const SplashScreen = () => {
     const timer = setTimeout(() => {
       // Navigasi ke halaman berikutnya setelah 3 detik
       router.replace("/(auth)/login");
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   });

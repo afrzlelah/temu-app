@@ -222,7 +222,10 @@ const RegisterScreen = () => {
           </View>
           {/* Button Sign in  */}
           <View style={styles.buttonCenterer}>
-            <Pressable style={styles.signInButton} onPress={onSubmit}>
+            <Pressable
+              style={styles.signInButton}
+              onPress={() => router.push("/(auth)/accountCreatedPage")}
+            >
               <Text style={styles.signInButtonText}>Create Account</Text>
             </Pressable>
             <View style={{ height: 20 }} />
@@ -230,7 +233,10 @@ const RegisterScreen = () => {
               <Text style={styles.dontHaveAnAccountText}>
                 Already Have An Account?
               </Text>
-              <Pressable onPress={() => router.replace("/(auth)")}>
+              <Pressable
+                onPress={() => router.replace("/(auth)/login")}
+                style={{ paddingVertical: 10 }}
+              >
                 <Text style={styles.dontHaveAnAccountTextLink}>Sign In</Text>
               </Pressable>
             </View>
@@ -238,7 +244,6 @@ const RegisterScreen = () => {
         </View>
         <View
           style={{
-            height: 50,
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
