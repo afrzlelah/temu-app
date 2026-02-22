@@ -78,7 +78,10 @@ const LoginScreen = () => {
 
         {/* Button Sign in  */}
         <View style={styles.buttonCenterer}>
-          <Pressable style={styles.signInButton}>
+          <Pressable
+            style={styles.signInButton}
+            onPress={() => router.replace("/(tabs)/home")}
+          >
             <Text style={styles.signInButtonText}>Sign In</Text>
           </Pressable>
         </View>
