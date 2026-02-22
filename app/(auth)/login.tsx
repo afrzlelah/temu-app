@@ -6,6 +6,7 @@ import {
   Pressable,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
@@ -91,7 +92,7 @@ const LoginScreen = () => {
 
         <View style={styles.iconAnotherSignInGroup}>
           <Pressable style={styles.iconAnotherSignIn}>
-            <FontAwesome5 name="google" size={24} color="black" />
+            <FontAwesome5 name="google" size={24} color="blue" />
           </Pressable>
           <Pressable style={styles.iconAnotherSignIn}>
             <FontAwesome5 name="apple" size={24} color="black" />
